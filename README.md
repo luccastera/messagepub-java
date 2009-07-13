@@ -15,6 +15,10 @@ Unzip the package:
     tar xzvf messagepub.tar.gz    
 
 
+Note: If you've downloaded the source, you can create the package using make:
+
+    make package
+
 ## How to run the tests that come with the package
 
 Once you've obtained the source code, take a look at the _src/MessagePubTest.java_ code to see how you can use the library.
