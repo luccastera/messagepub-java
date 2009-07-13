@@ -17,9 +17,9 @@ Unzip the package:
 
 ## How to run the tests that come with the package
 
-Once you've obtained the source code, take a look at the __src/MessagePubTest.java__ code to see how you can use the library.
+Once you've obtained the source code, take a look at the _src/MessagePubTest.java_ code to see how you can use the library.
 
-To run the tests, search for the string __TODO__ within the __src/MessagePubTest.java__ file and update the file as explained in the comments.
+To run the tests, search for the string _TODO_ within the _src/MessagePubTest.java_ file and update the file as explained in the comments.
 
 Once you've updated the test file, simply run:
 
@@ -32,7 +32,7 @@ Take a look at the output and check your account at [messagepub.com](http://mess
 
 To understand the messagepub API, read [our documentation](http://messagepub.com/documentation)
 
-For information on the messagepub-java library, look at the files in the __docs/__ folder.
+For information on the messagepub-java library, look at the files in the _docs/_ folder.
 
 To generate the documentation, use make:
 
