@@ -13,7 +13,7 @@ clean: tilde
 test: compile
 	cd bin && java MessagePubTest
 	
-package: compile
+package: clean compile
 	tar -czvvf pkg/messagepub.tar.gz src/ README.md bin/ Makefile docs/
 
 docs: clean compile
