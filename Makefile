@@ -14,7 +14,7 @@ test: compile
 	cd bin && java MessagePubTest
 	
 package: clean compile
-	tar -czvvf pkg/messagepub.tar.gz src/ README.md bin/ Makefile docs/
+	tar -czvvf pkg/messagepub-java.tar.gz src/ README.md bin/ Makefile docs/
 
 docs: clean compile
 	javadoc -d docs/ src/*
