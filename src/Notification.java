@@ -1,5 +1,23 @@
 import java.util.*;
 
+/**
+ * The Notification class lets you create notifications to be sent via messagepub<br/><br/>
+ * A notification object has the following data members:
+ * <ul>
+ * <li><strong>body</strong>: the body of the messages that will be sent for this notification.</li>
+ * <li><strong>escalation</strong>: the escalation parameter (in minutes) for this notification. See messagepub documentation.</li> 
+ * <li><strong>subject</strong>: the subject of the emails. <em>Only for email channel</em></li>
+ * <li><strong>recipients</strong>: an array of Recipient objects</li>
+ * <li><strong>sendAt</strong>: a string representing the date at which the message should be sent to this recipient. The format should be: <strong>YYYY-MM-DD HH:MM:SS</strong>.</li>
+ * </ul>
+ *
+ * <p>For more info, see the messagepub documentation: <a href="http://messagepub.com/documentation">messagepub.com/documentation</a></p>
+ * 
+ * @author Luc Castera (ShareMeme Inc.)
+ *
+ *
+**/
+
 public class Notification {
 
   private int id;

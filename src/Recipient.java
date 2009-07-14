@@ -1,7 +1,21 @@
 import java.util.*;
 
 /**
-
+ * Recipients will be receiving the messages you send via messagepub.<br/><br/>
+ * A recipient object has the following data members:
+ * <ul>
+ * <li><strong>position</strong>: this helps you set the order in which the notifications must be sent</li>
+ * <li><strong>channel</strong>: the channel where you want the message to be sent. One of: aim, email, twitter, phone, sms, gchat</li>
+ * <li><strong>address</strong>: can be an email address, a phone number, a twitter or IM username, depending on the channel</li>
+ * <li><strong>status</strong>: the status of the message sent to that recipient. Can be: new, sent, sending, cancelled. <em>This is set by messagepub servers, not the user of the library</em>.</li>
+ * <li><strong>sendAt</strong>: a string representing the date at which the message will be sent to this recipient. <em>This is set by the messagepub servers, not the user of the library</em>.</li>
+ * </ul>
+ *
+ * <p>For more info, see the messagepub documentation: <a href="http://messagepub.com/documentation">messagepub.com/documentation</a></p>
+ *  
+ * @author Luc Castera (ShareMeme Inc.)
+ *
+ *
 **/
 public class Recipient implements java.io.Serializable {
 

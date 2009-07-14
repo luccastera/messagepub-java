@@ -6,6 +6,18 @@ import javax.xml.parsers.*;
 import org.w3c.dom.*;
 import org.xml.sax.*;
 
+/**
+ * The MessagePub class lets you create a messagepub client to interact with the messagepub API.
+ *
+ * To use the client, you need your messagepub API key.
+ *
+ * <p>For more info, see the messagepub documentation: <a href="http://messagepub.com/documentation">messagepub.com/documentation</a></p>
+ * 
+ * @author Luc Castera (ShareMeme Inc.)
+ *
+ *
+**/
+
 public class MessagePub {
 
   private String apiKey;
@@ -17,21 +29,44 @@ public class MessagePub {
   public MessagePub() {  
   }
   
+  /**
+   * Instantiates a MessagePub client object.
+   *
+   * @param yourApiKey		The API Key of your messagepub account 
+  **/
   public MessagePub(String yourApiKey) {
     apiKey = yourApiKey;
     baseUrl = "http://messagepub.com";
     setAuthenticationEncoding();
   }
   
+  /**
+   * Returns the API Key for the MessagePub object.
+  **/  
   public String getApiKey() {
     return this.apiKey;
   }
-  
+
+  /**
+   * Allows you to set the API Key for the MessagePub object.
+   *
+   * @param yourApiKey		The API Key of your messagepub account   
+  **/    
   public void setApiKey(String apiKey) {
     this.apiKey = apiKey;
     setAuthenticationEncoding();
   }
   
+  
+  /**
+   * Contacts the messagepub service via its HTTP REST API to create and send a notification.
+   *
+   * @see Notification
+   * @see <a href="http://messagepub.com/documentation/api#createNotification">REST API DOC</a>
+   *
+   * @param myNotification		The notification that you want to send via messagepub
+   * @return a String containing the XML returned by messagepub
+  **/   
   public String create(Notification myNotification) {
     try {
       String xml = myNotification.getXML();
@@ -61,6 +96,14 @@ public class MessagePub {
     }
   }
   
+  /**
+   * Contacts the messagepub service via its HTTP REST API and fetches a list of the last 50 notifications sent from your account.
+   *
+   * @see Notification
+   * @see <a href="http://messagepub.com/documentation/api#viewNotifications">REST API DOC</a>
+   *
+   * @return an ArrayList of Notification objects.
+  **/   
   public ArrayList<Notification> list() {
     try {
       // Get content from URL
@@ -160,6 +203,16 @@ public class MessagePub {
     }
   }
   
+  /**
+   * Contacts the messagepub service via its HTTP REST API and cancels all scheduled messages for a notification.
+   *
+   * @see Notification
+   * @see <a href="http://messagepub.com/documentation/api#destroyNotification">REST API DOC</a>
+   *
+   * @param notificationId 		The unique ID for the notification you want to cancel
+   *
+   * @return <strong>true</strong> if the operation was a success.
+  **/     
   public boolean cancel(int notificationId) {
     try {
 			String urlName = this.baseUrl + "/notifications/" + notificationId + ".xml";
@@ -181,6 +234,16 @@ public class MessagePub {
     }
   }
 
+  /**
+   * Contacts the messagepub service via its HTTP REST API and fetches the information for the notification with the ID you specify.
+   *
+   * @see Notification
+   * @see <a href="http://messagepub.com/documentation/api#getNotification">REST API DOC</a>   
+   *
+   * @param notificationId 		The unique ID for the notification you want to get
+   *
+   * @return a Notification object.
+  **/  
   public Notification get(int notificationId) {
     try {
       // Get content from URL
